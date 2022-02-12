@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppareilComponent } from './appareil/appareil.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'my awesome app';
+  isAuth = false;
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status: 'éteint',
+    },
+    {
+      name: 'Télévision',
+      status: 'allumé',
+    },
+    {
+      name: 'Ordinateur',
+      status: 'éteint',
+    },
+  ];
+  constructor() {
+    setTimeout(() => {
+      this.isAuth = true;
+    }, 4000);
+  }
+
+  onAllumer() {
+    console.log('On allume tout !');
+  }
 }
