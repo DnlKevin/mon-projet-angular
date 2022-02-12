@@ -8,6 +8,14 @@ import { AppareilComponent } from './appareil/appareil.component';
 })
 export class AppComponent {
   isAuth = false;
+
+  lastUpdate: Promise<Date> = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(() => {
+      resolve(date);
+    }, 2000);
+  });
+
   appareils = [
     {
       name: 'Machine à laver',
